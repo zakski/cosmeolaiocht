@@ -1,0 +1,4 @@
+ext.versions = [:]
+
+// Test Libraries
+versions.junit = '5.9.1'

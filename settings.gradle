@@ -8,4 +8,4 @@
  */
 
 rootProject.name = 'cosmeolaiocht'
-include('app', 'list', 'utilities')
+include('pantheon-gen', 'pantheon')
