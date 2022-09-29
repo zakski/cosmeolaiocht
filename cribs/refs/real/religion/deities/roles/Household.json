@@ -1,0 +1,13 @@
+{
+  "name": "household",
+  "desc": "",
+  "aspects": [
+    "childbirth",
+    "family",
+    "hearth",
+    "kitchen",
+    "marriage",
+    "motherhood",
+    "women"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Aita",
+  "gender": "male",
+  "pantheon": "etruscan",
+  "isMajor": true,
+  "aspects": [ "the underworld"],
+  "consorts": ["Phersipnai"]
+}

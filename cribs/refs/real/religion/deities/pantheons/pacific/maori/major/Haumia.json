@@ -1,0 +1,9 @@
+{
+  "name": "Haumia",
+  "gender": "male",
+  "pantheon": "maori",
+  "isMajor": true,
+  "aspects": [ "wild plants"],
+  "parents": ["Ranginui","Papatūānuku"],
+  "siblings": ["Rehua","Rongo",  "Rūaumoko", "Tangaroa", "Tāne", "Tāwhirimātea", "Tūmatauenga", "Urutengangana"]
+}

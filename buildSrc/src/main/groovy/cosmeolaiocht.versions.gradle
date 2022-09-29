@@ -1,4 +1,7 @@
 ext.versions = [:]
 
+// Third-Party Libraries
+versions.jackson = '2.13.4'
+
 // Test Libraries
 versions.junit = '5.9.1'

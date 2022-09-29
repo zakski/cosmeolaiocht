@@ -1,0 +1,10 @@
+{
+  "name": "Tāne",
+  "gender": "male",
+  "pantheon": "maori",
+  "isMajor": true,
+  "aspects": [ "forest","birds", "humans"],
+  "parents": ["Ranginui","Papatūānuku"],
+  "siblings": ["Rehua","Haumia", "Rongo",  "Rūaumoko", "Tangaroa", "Tāwhirimātea", "Tūmatauenga", "Urutengangana"]
+
+}

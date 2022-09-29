@@ -1,0 +1,8 @@
+{
+  "name": "Okuninushi",
+  "gender": "male",
+  "pantheon": "japanese",
+  "isMajor": true,
+  "aspects": ["nation-building", "agriculture", "business", "medicine", "love", "marriage" , "fortune"],
+  "parents": ["Susanoo"]
+}
