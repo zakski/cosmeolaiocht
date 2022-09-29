@@ -1,0 +1,9 @@
+{
+  "name": "Aritimi",
+  "gender": "female",
+  "pantheon": "etruscan",
+  "isMajor": true,
+  "aspects": [ "the hunt", "the wilderness", "wild animals", "moon", "chastity"],
+  "parents": ["Letun"],
+  "siblings": ["Apulu"]
+}

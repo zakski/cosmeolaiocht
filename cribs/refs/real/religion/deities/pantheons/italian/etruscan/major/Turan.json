@@ -1,0 +1,8 @@
+{
+  "name": "Turan",
+  "gender": "female",
+  "pantheon": "etruscan",
+  "isMajor": true,
+  "aspects": [ "love", "beauty", "fertility", "vitality", "city (tutelary)"],
+  "consorts": ["Laran"]
+}

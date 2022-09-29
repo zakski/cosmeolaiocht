@@ -1,0 +1,9 @@
+{
+  "name": "Kagutsuchi",
+  "gender": "male",
+  "pantheon": "japanese",
+  "parents": ["Izanagi","Izanami"],
+  "siblings": ["Amaterasu", "Kagutsuchi","Susanoo","Oyamatsumi", "Tsukuyomi"],
+  "aspects": ["fire", "blacksmiths","ceramics workers"]
+
+}

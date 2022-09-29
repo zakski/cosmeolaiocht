@@ -1,0 +1,9 @@
+{
+  "name": "Whiro",
+  "gender": "male",
+  "pantheon": "maori",
+  "isMajor": true,
+  "aspects": ["darkness", "evil", "death"],
+  "parents": ["Ranginui","Papatūānuku"],
+  "siblings": ["Haumia", "Rongo",  "Rūaumoko", "Tangaroa", "Tāne", "Tāwhirimātea", "Tūmatauenga", "Urutengangana"]
+}

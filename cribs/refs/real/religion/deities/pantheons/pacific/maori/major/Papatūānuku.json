@@ -1,0 +1,10 @@
+{
+  "name": "Papatūānuku",
+  "gender": "female",
+  "pantheon": "maori",
+  "isPrimordial": true,
+  "isMajor": true,
+  "aspects": [ "earth"],
+  "consorts": ["Ranginui"],
+  "children": ["Haumia", "Rongo",  "Rūaumoko", "Tangaroa", "Tāne", "Tāwhirimātea", "Tūmatauenga", "Urutengangana"]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Māui",
+  "gender": "male",
+  "pantheon": "maori",
+  "isMajor": true,
+  "aspects": [ "strength", "trickery"],
+  "parents": ["Makeatutara"]
+}

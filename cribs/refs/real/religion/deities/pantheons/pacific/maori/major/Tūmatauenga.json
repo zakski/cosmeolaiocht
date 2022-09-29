@@ -1,0 +1,10 @@
+{
+  "name": "Tūmatauenga",
+  "gender": "male",
+  "pantheon": "maori",
+  "isMajor": true,
+  "aspects": [ "war","hunting", "agriculture", "fishing", "cooking"],
+  "parents": ["Ranginui","Papatūānuku"],
+  "siblings": ["Rehua","Haumia", "Rongo",  "Rūaumoko", "Tangaroa", "Tāne", "Tāwhirimātea", "Urutengangana"]
+
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Tinirau",
+  "gender": "male",
+  "pantheon": "maori",
+  "aspects": [ "fish"],
+  "parents": ["Tangaroa"],
+  "siblings": ["Punga"]
+}

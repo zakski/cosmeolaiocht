@@ -1,0 +1,7 @@
+{
+  "name": "Tenjin",
+  "gender": "male",
+  "pantheon": "japanese",
+  "isMajor": true,
+  "aspects": ["academics", "scholarship" , "learning"]
+}

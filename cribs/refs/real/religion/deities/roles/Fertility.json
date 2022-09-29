@@ -1,0 +1,31 @@
+{
+  "name": "fertility",
+  "desc": "A fertility deity is a god or goddess associated with fertility, sex, pregnancy, childbirth, and crops. In some cases these deities are directly associated with these experiences; in others they are more abstract symbols.",
+  "aspects": [
+    "affection",
+    "attraction",
+    "abundance",
+    "beauty",
+    "chastity",
+    "childbirth",
+    "desire",
+    "fertility",
+    "harvest",
+    "happiness",
+    "health",
+    "love",
+    "lust",
+    "liberation",
+    "marriage",
+    "mirth",
+    "motherhood",
+    "prosperity",
+    "plenty",
+    "revelry",
+    "renewal",
+    "sex",
+    "vitality",
+    "women",
+    "youth"
+   ]
+}

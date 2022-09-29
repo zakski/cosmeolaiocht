@@ -1,0 +1,9 @@
+{
+  "name": "Tinia",
+  "gender": "male",
+  "isMajor": true,
+  "pantheon": "etruscan",
+  "aspects": [ "sky"],
+  "consorts": ["Semla","Uni"],
+  "children": ["Fufluns", "Menrva"]
+}

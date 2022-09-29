@@ -1,0 +1,7 @@
+{
+  "name": "Inari",
+  "gender": "female",
+  "pantheon": "japanese",
+  "isMajor": true,
+  "aspects": ["foxes", "fertility", "rice", "agriculture", "tea", "sake", "industry", "prosperity", "swordsmiths", "merchants"]
+}

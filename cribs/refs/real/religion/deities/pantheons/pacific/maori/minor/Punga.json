@@ -1,0 +1,9 @@
+{
+  "name": "Punga",
+  "gender": "male",
+  "pantheon": "maori",
+  "aspects": [ "sharks", "lizards", "rays", "ugly things"],
+  "parents": ["Tangaroa"],
+  "siblings": ["Tinirau"],
+  "children": ["Ikatere", "Tū-te-wehiwehi"]
+}

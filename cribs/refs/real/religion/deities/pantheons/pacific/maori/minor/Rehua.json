@@ -1,0 +1,8 @@
+{
+  "name": "Rehua",
+  "gender": "male",
+  "pantheon": "maori",
+  "aspects": [ "stars", "healing"],
+  "parents": ["Ranginui","Papatūānuku"],
+  "siblings": ["Haumia", "Rongo",  "Rūaumoko", "Tangaroa", "Tāne", "Tāwhirimātea", "Tūmatauenga", "Urutengangana"]
+}

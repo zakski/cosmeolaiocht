@@ -1,0 +1,9 @@
+{
+  "name": "Susanoo",
+  "gender": "male",
+  "pantheon": "japanese",
+  "isMajor": true,
+  "aspects": ["the sea", "storms", "fields", "harvest", "marriage", "love"],
+  "parents": ["Izanagi","Izanami"],
+  "siblings": ["Amaterasu","Oyamatsumi","Kagutsuchi","Tsukuyomi"]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Fujin",
+  "gender": "male",
+  "pantheon": "japanese",
+  "isMajor": true,
+  "aspects": ["wind"]
+}

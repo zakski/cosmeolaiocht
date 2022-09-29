@@ -1,0 +1,10 @@
+{
+  "name": "Tangaroa",
+  "gender": "male",
+  "pantheon": "maori",
+  "isMajor": true,
+  "aspects": [ "sea", "lakes", "rivers", "fish"],
+  "parents": ["Ranginui","Papatūānuku"],
+  "siblings": ["Rehua","Haumia", "Rongo",  "Rūaumoko", "Tāne", "Tāwhirimātea", "Tūmatauenga", "Urutengangana"],
+  "children": ["Tinirau"]
+}

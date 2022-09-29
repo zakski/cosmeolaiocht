@@ -1,0 +1,9 @@
+{
+  "name": "Tsukuyomi",
+  "gender": "male",
+  "pantheon": "japanese",
+  "isMajor": true,
+  "aspects": ["moon"],
+  "parents": ["Izanagi","Izanami"],
+  "siblings": ["Amaterasu","Oyamatsumi","Kagutsuchi","Susanoo"]
+}

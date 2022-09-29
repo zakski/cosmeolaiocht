@@ -1,0 +1,10 @@
+{
+  "name": "Tāwhirimātea",
+  "gender": "male",
+  "pantheon": "maori",
+  "isMajor": true,
+  "aspects": [ "weather",  "thunder", "lightning", "wind", "clouds", "storms"],
+  "parents": ["Ranginui","Papatūānuku"],
+  "siblings": ["Rehua","Haumia", "Rongo",  "Rūaumoko", "Tangaroa", "Tāne", "Tūmatauenga", "Urutengangana"]
+
+}

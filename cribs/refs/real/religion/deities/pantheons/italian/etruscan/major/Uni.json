@@ -1,0 +1,9 @@
+{
+  "name": "Uni",
+  "gender": "female",
+  "isMajor": true,
+  "pantheon": "etruscan",
+  "aspects": [ "love", "marriage", "fertility", "family", "women", "city (tutelary)"],
+  "consorts": ["Tinia"],
+  "children": ["Menrva"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Oyamatsumi",
+  "gender": "male",
+  "pantheon": "japanese",
+  "aspects": ["mountains", "the sea", "war"],
+  "parents": ["Izanagi","Izanami"],
+  "siblings": ["Amaterasu", "Kagutsuchi","Susanoo","Tsukuyomi"],
+  "children": ["Sakuyahime"]
+}

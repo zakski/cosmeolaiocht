@@ -1,0 +1,10 @@
+{
+  "name": "Rongo",
+  "gender": "male",
+  "pantheon": "maori",
+  "isMajor": true,
+  "aspects": [ "crops", "kumara"],
+  "parents": ["Ranginui","Papatūānuku"],
+  "siblings": ["Rehua","Haumia",  "Rūaumoko", "Tangaroa", "Tāne", "Tāwhirimātea", "Tūmatauenga", "Urutengangana"]
+
+}

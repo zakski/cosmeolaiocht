@@ -1,0 +1,8 @@
+{
+  "name": "Fufluns",
+  "gender": "male",
+  "isMajor": true,
+  "pantheon": "etruscan",
+  "aspects": [ "plant life", "happiness", "wine", "fertility"],
+  "parents": ["Semla","Tinia"]
+}

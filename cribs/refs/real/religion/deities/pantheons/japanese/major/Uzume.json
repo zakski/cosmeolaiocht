@@ -1,0 +1,7 @@
+{
+  "name": "Uzume",
+  "gender": "female",
+  "pantheon": "japanese",
+  "isMajor": true,
+  "aspects": ["dawn", "mirth", "meditation", "revelry" , "the arts"]
+}
