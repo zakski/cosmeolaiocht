@@ -1,0 +1,9 @@
+{
+  "name": "Amaterasu",
+  "gender": "female",
+  "pantheon": "japanese",
+  "isMajor": true,
+  "aspects": ["sun", "the universe"],
+  "parents": ["Izanagi","Izanami"],
+  "siblings": ["Oyamatsumi", "Kagutsuchi","Susanoo","Tsukuyomi"]
+}

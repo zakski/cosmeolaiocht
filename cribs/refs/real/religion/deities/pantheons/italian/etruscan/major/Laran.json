@@ -1,0 +1,8 @@
+{
+  "name": "Laran",
+  "gender": "male",
+  "pantheon": "etruscan",
+  "isMajor": true,
+  "aspects": [ "war","fire","sun", "peace"],
+  "consorts": ["Turan"]
+}

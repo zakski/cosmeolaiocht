@@ -1,0 +1,14 @@
+{
+  "name": "smithing",
+  "desc": "",
+  "aspects": [
+    "blacksmiths",
+    "craftsmanship",
+    "metalworking",
+    "fire",
+    "swordsmiths",
+    "swords",
+    "the forge",
+    "volcanoes"
+  ]
+}

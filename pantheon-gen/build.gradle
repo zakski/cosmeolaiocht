@@ -1,0 +1,12 @@
+plugins {
+    id 'cosmeolaiocht.kotlin-application-conventions'
+}
+
+dependencies {
+    implementation project(':pantheon')
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'cosmeolaiocht.app.AppKt'
+}

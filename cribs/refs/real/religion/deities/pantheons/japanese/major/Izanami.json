@@ -1,0 +1,10 @@
+{
+  "name": "Izanami",
+  "gender": "female",
+  "pantheon": "japanese",
+  "isPrimordial": true,
+  "aspects": ["creation", "death"],
+  "consorts": ["Izanagi"],
+  "siblings": ["Izanagi"],
+  "children": ["Amaterasu", "Kagutsuchi","Susanoo","Oyamatsumi", "Tsukuyomi"]
+}

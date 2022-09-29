@@ -1,0 +1,10 @@
+{
+  "name": "Ranginui",
+  "gender": "male",
+  "pantheon": "maori",
+  "isPrimordial": true,
+  "isMajor": true,
+  "aspects": [ "sky"],
+  "consorts": ["Papatūānuku"],
+  "children": ["Haumia", "Rongo",  "Rūaumoko", "Tangaroa", "Tāne", "Tāwhirimātea", "Tūmatauenga", "Urutengangana"]
+}

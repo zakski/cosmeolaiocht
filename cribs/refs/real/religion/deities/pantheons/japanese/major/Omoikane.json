@@ -1,0 +1,7 @@
+{
+  "name": "Omoikane",
+  "gender": "male",
+  "pantheon": "japanese",
+  "isMajor": true,
+  "aspects": ["wisdom" , "intelligence"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Apulu",
+  "gender": "male",
+  "pantheon": "etruscan",
+  "isMajor": true,
+  "aspects": ["archery", "healing", "prophecy", "music", "the arts", "sun", "knowledge", "herds" , "flocks", "youth"],
+  "parents": ["Letun"],
+  "siblings": ["Aritimi"]
+}

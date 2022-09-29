@@ -1,0 +1,7 @@
+{
+  "name": "Sujin",
+  "gender": "male",
+  "pantheon": "japanese",
+  "isMajor": true,
+  "aspects": ["water", "fishing" , "fertility", "motherhood", "childbirth"]
+}

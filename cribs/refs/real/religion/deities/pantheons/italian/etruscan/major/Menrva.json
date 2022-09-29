@@ -1,0 +1,9 @@
+{
+  "name": "Menrva",
+  "gender": "female",
+  "isMajor": true,
+  "pantheon": "etruscan",
+  "aspects": [ "war", "the arts", "wisdom", "health", "medicine"],
+  "parents": ["Tinia", "Uni"],
+  "siblings": ["Fufluns"]
+}

@@ -1,0 +1,13 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+}
+
+plugins {
+    id 'cosmeolaiocht.kotlin-library-conventions'
+    id "nebula.maven-publish" version "18.4.0"
+    id "nebula.release" version "16.1.0" // plugin to provide semantic versioning
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Rūaumoko",
+  "gender": "male",
+  "pantheon": "maori",
+  "aspects": [ "earthquakes", "volcanoes", "seasons"],
+  "parents": ["Ranginui","Papatūānuku"],
+  "siblings": ["Haumia", "Rongo", "Tangaroa", "Tāne", "Tāwhirimātea", "Tūmatauenga", "Urutengangana"]
+
+}

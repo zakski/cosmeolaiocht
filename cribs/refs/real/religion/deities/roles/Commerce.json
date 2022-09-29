@@ -1,0 +1,15 @@
+{
+  "name": "commerce",
+  "desc": "",
+  "aspects": [
+    "business",
+    "industry",
+    "fortune",
+    "merchants",
+    "messages",
+    "oaths",
+    "prosperity",
+    "trade",
+    "wealth"
+  ]
+}
