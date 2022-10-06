@@ -22,16 +22,17 @@ object JsonMapper {
      * @param dir the current directory to extract json files from
      * @return an array of json files
      */
-    private fun getJson(dir: File): List<File> {
+    private fun getJson(dir: File, filter: (File) -> Boolean): List<File> {
         return dir.listFiles()
-                .filter { f -> f.isDirectory || f.name.endsWith(".json") }
-                .flatMap { f ->
-                    if (f.isDirectory) {
-                        getJson(f).asIterable()
-                    } else {
-                        Array(1) { f }.asIterable()
-                    }
+            .filter { f -> f.isDirectory || f.name.endsWith(".json") }
+            .filter(filter)
+            .flatMap { f ->
+                if (f.isDirectory) {
+                    getJson(f, filter).asIterable()
+                } else {
+                    Array(1) { f }.asIterable()
                 }
+            }
     }
 
     /**
@@ -40,8 +41,8 @@ object JsonMapper {
      * @param dir the root directory to extract the json files from
      * @return an array of json files
      */
-    private fun getJson(dir: String): List<File> {
-        return getJson(File(dir))
+    private fun getJson(dir: String, filter: (File) -> Boolean): List<File> {
+        return getJson(File(dir), filter)
     }
 
     private fun <T> mapFile(c: Class<T>, f: File): T {
@@ -62,8 +63,21 @@ object JsonMapper {
      * @return List of converted T instances
      */
     fun <T> read(directory: String, c: Class<T>): List<T> {
-        return getJson(directory).map { f -> mapFile(c, f) }
+        return read(directory, c, { f -> true })
     }
+
+    /**
+     * Methods to load pojo objects from json files
+     *
+     * @param directory the directory to extract the json files from
+     * @param c the class to map the json to
+     * @tparam T the type of class to map the json to
+     * @return List of converted T instances
+     */
+    fun <T> read(directory: String, c: Class<T>, filter: (File) -> Boolean): List<T> {
+        return getJson(directory, filter).map { f -> mapFile(c, f) }
+    }
+
 
     fun <T> write(f: File, value: T) {
         writer.writeValue(f, value)

@@ -1,5 +1,6 @@
 package com.szadowsz.cosmeolaiocht.deities
 
+import com.szadowsz.cosmeolaiocht.deities.pojo.DeitiesPojo
 import com.szadowsz.cosmeolaiocht.deities.pojo.DeityPojo
 import com.szadowsz.cosmeolaiocht.deities.pojo.RolePojo
 import com.szadowsz.cosmeolaiocht.utils.JsonMapper
@@ -71,7 +72,8 @@ object PantheonProcessor {
      */
     fun process(deitiesDir: String, rolesDir: String): PantheonsData {
         // load data from json files
-        val deityPojos = JsonMapper.read(deitiesDir, DeityPojo::class.java)
+        val deityPojos = JsonMapper.read(deitiesDir, DeityPojo::class.java,{f -> !f.nameWithoutExtension.equals("Deities")}) +
+                JsonMapper.read(deitiesDir, DeitiesPojo::class.java,{ f -> f.isDirectory || f.nameWithoutExtension.equals("Deities")}).flatMap { ds -> ds.deities}
         val rolePojos = JsonMapper.read(rolesDir, RolePojo::class.java)
 
         // connect the deities and aspects together
