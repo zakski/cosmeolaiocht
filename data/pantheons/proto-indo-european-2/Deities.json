@@ -1,0 +1,164 @@
+{
+  "deities":[
+    {
+      "name": "Deh₂nu-",
+      "gender": "female",
+      "pantheon": "proto-indo-european-alt",
+      "isMajor": false,
+      "aspects": ["rivers"]
+    },
+    {
+      "name": "Dʰéǵʰōm",
+      "gender": "female",
+      "pantheon": "proto-indo-european-alt",
+      "isMajor": true,
+      "aspects": ["earth", "death", "life"],
+      "consorts": ["Perkʷunos"]
+    },
+    {
+      "name": "Diuōneh₂",
+      "gender": "female",
+      "pantheon": "proto-indo-european-alt",
+      "isMajor": true,
+      "aspects": ["marriage","fertility"],
+      "consorts": ["Dyḗus"],
+      "children": ["Twin A","Twin B","Hausōs", "Perkʷunos"]
+    },
+    {
+      "name": "Dyḗus",
+      "gender": "male",
+      "pantheon": "proto-indo-european-alt",
+      "isMajor": true,
+      "aspects": ["sky", "day", "heaven"],
+      "consorts": ["Diuōneh₂"],
+      "children": ["Twin A","Twin B","Hausōs", "Perkʷunos"]
+    },
+    {
+      "name": "Fate 1",
+      "gender": "female",
+      "pantheon": "proto-indo-european-alt",
+      "group": "the fates",
+      "isMajor": false,
+      "aspects": ["fate"],
+      "siblings": ["Fate 2","Fate 3"]
+    },
+    {
+      "name": "Fate 2",
+      "gender": "female",
+      "pantheon": "proto-indo-european-alt",
+      "group": "the fates",
+      "isMajor": false,
+      "aspects": ["fate"],
+      "siblings": ["Fate 1","Fate 3"]
+    },
+    {
+      "name": "Fate 3",
+      "gender": "female",
+      "pantheon": "proto-indo-european-alt",
+      "group": "the fates",
+      "isMajor": false,
+      "aspects": ["fate"],
+      "siblings": ["Fate 2","Fate 1"]
+    },
+    {
+      "name": "Hausōs",
+      "gender": "female",
+      "pantheon": "proto-indo-european-alt",
+      "isMajor": true,
+      "aspects": ["dawn", "light", "rebirth"],
+      "parents": ["Dyḗus", "Diuōneh₂"],
+      "siblings": ["Twin A","Twin B", "Perkʷunos"]
+    },
+    {
+      "name": "h₂eryo-men",
+      "gender": "male",
+      "pantheon": "proto-indo-european-alt",
+      "isMajor": false,
+      "aspects": ["welfare", "community", "roads","healing","marriage"]
+    },
+    {
+      "name": "H₁n̥gʷnis",
+      "gender": "male",
+      "pantheon": "proto-indo-european-alt",
+      "isMajor": false,
+      "aspects": ["fire"]
+    },
+    {
+      "name": "H₂weh₁-yú",
+      "gender": "male",
+      "pantheon": "proto-indo-european-alt",
+      "isMajor": false,
+      "aspects": ["wind"]
+    },
+    {
+      "name": "Meh₁not",
+      "gender": "female",
+      "pantheon": "proto-indo-european-alt",
+      "isMajor": false,
+      "aspects": ["moon"]
+    },
+    {
+      "name": "Neptonos",
+      "gender": "male",
+      "pantheon": "proto-indo-european-alt",
+      "isMajor": false,
+      "aspects": ["water"]
+    },
+    {
+      "name": "Péh₂usōn",
+      "gender": "male",
+      "pantheon": "proto-indo-european-alt",
+      "isMajor": false,
+      "aspects": ["roads","herds"]
+    },
+    {
+      "name": "Perkʷunos",
+      "gender": "male",
+      "pantheon": "proto-indo-european-alt",
+      "isMajor": false,
+      "aspects": ["weather","lightning","storms", "thunder", "rain", "oak", "mountains","stone","woods"],
+      "parents": ["Dyḗus", "Diuōneh₂"],
+      "consorts": ["Dʰéǵʰōm"],
+      "siblings": ["Hausōs","Twin A","Twin B"]
+    },
+    {
+      "name": "Seh₂ul",
+      "gender": "female",
+      "pantheon": "proto-indo-european-alt",
+      "isMajor": true,
+      "aspects": ["sun"],
+      "consorts": ["Twin A","Twin B"]
+    },
+    {
+      "name": "Smith",
+      "gender": "male",
+      "pantheon": "proto-indo-european-alt",
+      "isMajor": false,
+      "aspects": ["smiths","craftsmen"]
+    },
+    {
+      "name": "Twin A",
+      "gender": "male",
+      "pantheon": "proto-indo-european-alt",
+      "group": "divine twins",
+      "isMajor": true,
+      "aspects": ["fertility","horses", "strength", "war", "warriors"],
+      "parents": ["Dyḗus", "Diuōneh₂"],
+      "consorts": ["Seh₂ul"],
+      "siblings": ["Hausōs","Twin B", "Perkʷunos"]
+    },
+    {
+      "name": "Twin B",
+      "gender": "male",
+      "pantheon": "proto-indo-european-alt",
+      "group": "divine twins",
+      "isMajor": true,
+      "aspects": ["fertility","horses", "healing", "agriculture", "love"],
+      "parents": ["Dyḗus", "Diuōneh₂"],
+      "consorts": ["Seh₂ul"],
+      "siblings": ["Hausōs","Twin A", "Perkʷunos"]
+    }
+
+
+  ]
+}
