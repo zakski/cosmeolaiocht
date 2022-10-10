@@ -1,14 +1,19 @@
-package com.szadowsz.cosmeolaiocht.deities
+package com.szadowsz.cosmeolaiocht
 
+import com.szadowsz.cosmeolaiocht.deities.Aspect
+import com.szadowsz.cosmeolaiocht.deities.Deity
 import com.szadowsz.cosmeolaiocht.deities.pojo.DeitiesPojo
 import com.szadowsz.cosmeolaiocht.deities.pojo.DeityPojo
 import com.szadowsz.cosmeolaiocht.deities.pojo.RolePojo
+import com.szadowsz.cosmeolaiocht.myths.Event
+import com.szadowsz.cosmeolaiocht.myths.pojo.EventPojo
+import com.szadowsz.cosmeolaiocht.myths.pojo.EventsPojo
 import com.szadowsz.cosmeolaiocht.utils.JsonMapper
 
 object PantheonProcessor {
 
     private fun addAspects(d: Deity, pojo: DeityPojo?, aspects: MutableMap<String, Aspect>) {
-        d.aspects += (pojo?.aspects ?: listOf()).map{ a -> aspects.getOrPut(a, { -> Aspect(a)})}
+        d.aspects += (pojo?.aspects ?: listOf()).map{ a -> aspects.getOrPut(a, { -> Aspect(a) })}
         d.aspects.forEach { a -> a.deities += d }
     }
 
@@ -39,7 +44,7 @@ object PantheonProcessor {
      * @param rolePojos list of basic role JSON data
      * @return (list of aspects, list of deities)
      */
-    private fun processPojos(deityPojos: List<DeityPojo>, rolePojos: List<RolePojo>): Pair<List<Aspect>, List<Deity>> {
+    private fun processPojos(deityPojos: List<DeityPojo>, rolePojos: List<RolePojo>, eventsPojos: List<EventPojo>): Triple<List<Aspect>, List<Deity>, List<Event>> {
         // convert deity pojo list to a map so we can reference all the related elements later
         val deityPojoMap = deityPojos.map { pojo -> pojo.key() to pojo }.toMap()
 
@@ -60,7 +65,7 @@ object PantheonProcessor {
 
         aspectMap.values.forEach { a -> a.addRoles(rolePojos) }
 
-        return Pair(aspectMap.values.toList().sortedBy { a -> a.name }, deities)
+        return Triple(aspectMap.values.toList().sortedBy { a -> a.name }, deities,ArrayList<Event>())
     }
 
     /**
@@ -72,12 +77,15 @@ object PantheonProcessor {
      */
     fun process(deitiesDir: String, rolesDir: String): PantheonsData {
         // load data from json files
-        val deityPojos = JsonMapper.read(deitiesDir, DeityPojo::class.java,{f -> !f.nameWithoutExtension.equals("Deities")}) +
+        val deityPojos = JsonMapper.read(deitiesDir, DeityPojo::class.java,{f -> !f.nameWithoutExtension.equals("Myths") && !f.nameWithoutExtension.equals("Deities")}) +
                 JsonMapper.read(deitiesDir, DeitiesPojo::class.java,{ f -> f.isDirectory || f.nameWithoutExtension.equals("Deities")}).flatMap { ds -> ds.deities}
+
         val rolePojos = JsonMapper.read(rolesDir, RolePojo::class.java)
 
+        val eventPojos = JsonMapper.read(deitiesDir, EventsPojo::class.java,{ f -> f.isDirectory || f.nameWithoutExtension.equals("Myths")}).flatMap { ds -> ds.myths}
+
         // connect the deities and aspects together
-        val (aspects, deities) = processPojos(deityPojos, rolePojos)
-        return PantheonsData(rolePojos.map{it.name}, deities, aspects)
+        val (aspects, deities, events) = processPojos(deityPojos, rolePojos, eventPojos)
+        return PantheonsData(rolePojos.map{it.name}, deities, aspects, events)
     }
 }
