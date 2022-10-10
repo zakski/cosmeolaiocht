@@ -1,10 +1,19 @@
-package com.szadowsz.cosmeolaiocht.deities
+package com.szadowsz.cosmeolaiocht
 
+import com.szadowsz.cosmeolaiocht.deities.Aspect
+import com.szadowsz.cosmeolaiocht.deities.AspectReport
+import com.szadowsz.cosmeolaiocht.deities.Deity
+import com.szadowsz.cosmeolaiocht.myths.Event
 import com.szadowsz.cosmeolaiocht.utils.FileUtils
 import com.szadowsz.cosmeolaiocht.utils.JsonMapper
 import java.io.File
 
-data class PantheonsData(val roles: List<String>, val deities: List<Deity>, val aspects: List<Aspect>) {
+data class PantheonsData(
+    val roles: List<String>,
+    val deities: List<Deity>,
+    val aspects: List<Aspect>,
+    val events: List<Event>
+) {
 
     fun pantheonCounts(): Map<String, Int> {
         return deities.groupBy{d -> d.pantheon}.mapValues{(k,v) -> v.size}.toMap()
