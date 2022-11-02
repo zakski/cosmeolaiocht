@@ -7,4 +7,5 @@ fun main() {
 
     // for human-readable debugging purposes
     pantheons.printAspectReports()
+    pantheons.printEventReports()
 }

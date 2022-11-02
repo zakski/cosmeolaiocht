@@ -4,6 +4,7 @@ import com.szadowsz.cosmeolaiocht.deities.Aspect
 import com.szadowsz.cosmeolaiocht.deities.AspectReport
 import com.szadowsz.cosmeolaiocht.deities.Deity
 import com.szadowsz.cosmeolaiocht.myths.Event
+import com.szadowsz.cosmeolaiocht.myths.pojo.EventPojo
 import com.szadowsz.cosmeolaiocht.utils.FileUtils
 import com.szadowsz.cosmeolaiocht.utils.JsonMapper
 import java.io.File
@@ -49,5 +50,13 @@ data class PantheonsData(
                 throw t
             }
         }
+    }
+
+    fun printEventReports() {
+        val dir = File("./report/religion/events/")
+        FileUtils.deleteJson(dir)
+        dir.mkdirs()
+        val f = File("./report/religion/events/events.json")
+        JsonMapper.write(f, events.map { e -> EventPojo(e.pantheon,e.id,e.type.name,e.precedence,e.deities.map { d->d.name }) })
     }
 }

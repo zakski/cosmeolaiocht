@@ -23,6 +23,9 @@ dependencies {
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-kotlin
     implementation group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: versions.jackson
 
+    // https://mvnrepository.com/artifact/org.optaplanner/optaplanner-core
+    // implementation group: 'org.optaplanner', name: 'optaplanner-core', version: versions.optaplan
+
     // Use JUnit Jupiter for testing - https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: versions.junit
 }
