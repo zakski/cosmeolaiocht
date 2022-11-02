@@ -6,6 +6,7 @@ import com.szadowsz.cosmeolaiocht.deities.pojo.DeitiesPojo
 import com.szadowsz.cosmeolaiocht.deities.pojo.DeityPojo
 import com.szadowsz.cosmeolaiocht.deities.pojo.RolePojo
 import com.szadowsz.cosmeolaiocht.myths.Event
+import com.szadowsz.cosmeolaiocht.myths.EventType
 import com.szadowsz.cosmeolaiocht.myths.pojo.EventPojo
 import com.szadowsz.cosmeolaiocht.myths.pojo.EventsPojo
 import com.szadowsz.cosmeolaiocht.utils.JsonMapper
@@ -44,7 +45,7 @@ object PantheonProcessor {
      * @param rolePojos list of basic role JSON data
      * @return (list of aspects, list of deities)
      */
-    private fun processPojos(deityPojos: List<DeityPojo>, rolePojos: List<RolePojo>, eventsPojos: List<EventPojo>): Triple<List<Aspect>, List<Deity>, List<Event>> {
+    private fun processPojos(deityPojos: List<DeityPojo>, rolePojos: List<RolePojo>, eventPojos: List<EventPojo>): Triple<List<Aspect>, List<Deity>, List<Event>> {
         // convert deity pojo list to a map so we can reference all the related elements later
         val deityPojoMap = deityPojos.map { pojo -> pojo.key() to pojo }.toMap()
 
@@ -65,7 +66,87 @@ object PantheonProcessor {
 
         aspectMap.values.forEach { a -> a.addRoles(rolePojos) }
 
-        return Triple(aspectMap.values.toList().sortedBy { a -> a.name }, deities,ArrayList<Event>())
+        val events = processEvents(deities, eventPojos)
+
+        return Triple(aspectMap.values.toList().sortedBy { a -> a.name }, deities,events)
+    }
+
+    private fun processEvents(deities: List<Deity>, eventPojos: List<EventPojo>): List<Event> {
+        val deitiesByPantheon = deities.groupBy { d -> d.pantheon }
+        val eventPojosByPantheon = eventPojos.groupBy { ep -> ep.pantheon}
+
+        val eventsByPantheon = HashMap<String,List<Event>>()
+
+        for (pantheon in deitiesByPantheon.keys){
+            val deitiesInPantheon = deitiesByPantheon.get(pantheon).orEmpty()
+            val eventPojosInPantheon = eventPojosByPantheon.get(pantheon).orEmpty()
+
+            val eventsInPantheon = ArrayList<Event>()
+
+            for (pojo in eventPojosInPantheon){
+                eventsInPantheon.add(Event(pojo.pantheon, pojo.id, EventType.valueOf(pojo.type),pojo.precedence, deitiesInPantheon.filter { d -> pojo.deities.contains(d.name) }))
+            }
+
+
+            // bigbang occurs first, it's the starting marker
+            eventsInPantheon.find { e -> e.type == EventType.bigBang}?: eventsInPantheon.add(Event(
+                pantheon,
+                pantheon + "-" + eventsInPantheon.size,
+                EventType.bigBang,
+                0,
+                ArrayList<Deity>()
+            ))
+
+            // then primordial deities pop into existence
+            val primordialEvents = eventsInPantheon.filter { e -> e.type == EventType.primordial }
+            val primordialDeities = deitiesInPantheon.filter { d -> d.isPrimordial && !primordialEvents.any { e -> e.deities.contains(d) } }
+            for (deity in primordialDeities) {
+                eventsInPantheon.add(Event(
+                    pantheon,
+                    pantheon + "-" + eventsInPantheon.size,
+                    EventType.primordial,
+                    1,
+                    arrayListOf(deity)
+                ))
+            }
+
+            var birthEvents = eventsInPantheon.filter { e -> e.type == EventType.birthOfDeity }
+            var birthDeities = deitiesInPantheon.filter { d -> !d.isPrimordial && !birthEvents.any { e -> e.deities.contains(d) } }
+
+            var size = -1
+            var precedence = 2
+            while (birthDeities.isNotEmpty() && birthDeities.size != size) {
+                size = birthDeities.size
+                birthEvents = eventsInPantheon.filter { e -> e.type == EventType.birthOfDeity }
+                val (toAdd, leftovers) = birthDeities.partition { d -> d.parents.isEmpty() || d.parents.all { p -> birthEvents.any { e -> e.deities.contains(p) } } }
+                birthDeities = leftovers
+                for (deity in toAdd) {
+                    eventsInPantheon.add(Event(
+                        pantheon,
+                        pantheon + "-" + eventsInPantheon.size,
+                        EventType.birthOfDeity,
+                        precedence,
+                        arrayListOf(deity)
+                    ))
+                }
+                precedence += 1
+            }
+
+            // last is ragnarok, eschatological
+            val deathEvents = eventsInPantheon.filter { e -> e.type == EventType.deathOfDeity }
+            val aliveDeities = deitiesInPantheon.filter { d -> !deathEvents.any { e -> e.deities.contains(d) } }
+            eventsInPantheon.find { e -> e.type == EventType.eschatological}?: eventsInPantheon.add(Event(
+                pantheon,
+                pantheon + "-" + eventsInPantheon.size,
+                EventType.eschatological,
+                eventsInPantheon.maxOf { e -> e.precedence } + 1,
+                aliveDeities
+            ))
+
+            eventsByPantheon.put(pantheon, eventsInPantheon)
+        }
+
+        return eventsByPantheon.values.flatten();
     }
 
     /**

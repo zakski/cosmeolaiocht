@@ -2,6 +2,7 @@ ext.versions = [:]
 
 // Third-Party Libraries
 versions.jackson = '2.13.4'
+versions.optaplan = '8.29.0.Final'
 
 // Test Libraries
 versions.junit = '5.9.1'
