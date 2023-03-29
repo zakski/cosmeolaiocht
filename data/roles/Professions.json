@@ -1,0 +1,9 @@
+{
+  "name": "profession",
+  "desc": "A deity or spirit who is a guardian, patron, or protector of people working a particular job.",
+  "aspects": [
+    "craftsmen",
+    "smiths",
+    "warriors"
+  ]
+}
