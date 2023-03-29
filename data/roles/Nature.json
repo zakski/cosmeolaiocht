@@ -4,8 +4,17 @@
   "aspects": [
     "earth",
     "fire",
+    "lightning",
+    "mountains",
+    "oak",
+    "rivers",
+    "rain",
+    "stone",
+    "storms",
+    "thunder",
     "water",
     "weather",
-    "wind"
+    "wind",
+    "woods"
   ]
 }

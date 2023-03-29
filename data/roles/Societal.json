@@ -1,0 +1,10 @@
+{
+  "name": "societal",
+  "desc": "A deity or spirit who is a guardian, patron, or protector of an aspect of society.",
+  "aspects": [
+    "community",
+    "marriage",
+    "roads",
+    "welfare"
+  ]
+}

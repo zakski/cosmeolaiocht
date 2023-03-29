@@ -1,0 +1,10 @@
+{
+  "name": "health",
+  "desc": "A deity or spirit who is associated with health, healing and wellbeing..",
+  "aspects": [
+    "fertility",
+    "healing",
+    "rebirth",
+    "welfare"
+  ]
+}
