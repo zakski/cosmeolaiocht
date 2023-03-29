@@ -1,0 +1,7 @@
+{
+  "name": "Parjanya",
+  "gender": "male",
+  "pantheon": "vedic",
+  "isMajor": true,
+  "aspects": ["rain", "thunder", "lightning", "fertility"]
+}

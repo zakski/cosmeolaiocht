@@ -1,0 +1,7 @@
+{
+  "name": "Indra",
+  "gender": "male",
+  "pantheon": "vedic",
+  "isMajor": true,
+  "aspects": ["heaven","sky", "lightning", "weather", "thunder", "storms", "rain", "rivers", "war"]
+}

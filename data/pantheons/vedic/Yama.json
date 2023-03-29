@@ -1,0 +1,7 @@
+{
+  "name": "Yama",
+  "gender": "male",
+  "pantheon": "vedic",
+  "isMajor": false,
+  "aspects": ["death", "justice"]
+}

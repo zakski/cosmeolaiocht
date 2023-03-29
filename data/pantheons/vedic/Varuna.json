@@ -1,0 +1,7 @@
+{
+  "name": "Varuna",
+  "gender": "male",
+  "pantheon": "vedic",
+  "isMajor": false,
+  "aspects": ["sky", "oceans", "water", "justice", "truth"]
+}

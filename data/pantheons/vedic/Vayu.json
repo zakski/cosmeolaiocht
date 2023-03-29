@@ -1,0 +1,7 @@
+{
+  "name": "Vayu",
+  "gender": "male",
+  "pantheon": "vedic",
+  "isMajor": true,
+  "aspects": ["air", "wind", "breath"]
+}
