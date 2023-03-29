@@ -2,9 +2,20 @@
   "name": "societal",
   "desc": "A deity or spirit who is a guardian, patron, or protector of an aspect of society.",
   "aspects": [
+    "building",
     "community",
+    "customs",
+    "homestead",
+    "hospitality",
+    "house",
+    "justice",
+    "journeys",
     "marriage",
+    "meetings",
+    "oaths",
     "roads",
+    "truth",
+    "wealth",
     "welfare"
   ]
 }

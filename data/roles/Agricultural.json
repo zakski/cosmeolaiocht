@@ -3,6 +3,8 @@
   "desc": "A deity or spirit thought to care for an aspect of growing, harvesting, and storing crops or other rural activities",
   "aspects": [
     "agriculture",
+    "cattle",
+    "cows",
     "fertility",
     "herds",
     "horses",

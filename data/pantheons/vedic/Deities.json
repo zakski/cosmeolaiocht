@@ -164,7 +164,7 @@
       "gender": "male",
       "pantheon": "vedic",
       "isMajor": false,
-      "aspects": ["meetings", "marriages", "journeys", "roads", "cattle"]
+      "aspects": ["meetings", "marriage", "journeys", "roads", "cattle", "psychopomp"]
     },
     {
       "name": "Ratri",
@@ -179,7 +179,7 @@
       "gender": "male",
       "pantheon": "vedic",
       "isMajor": false,
-      "aspects": ["wind", "storms", "medicine", "hunting", "luck", "death", "destruction", "time", "animals"]
+      "aspects": ["wind", "storms", "medicine", "hunt, the", "luck", "death", "destruction", "time", "animals"]
     },
     {
       "name": "Sanjna",
@@ -239,7 +239,7 @@
       "gender": "male",
       "pantheon": "vedic",
       "isMajor": false,
-      "aspects": ["craftmen","artisans", "wombs"],
+      "aspects": ["craftsmen","artisans", "wombs"],
       "children": ["Sanjna","Vishvarupa"]
     },
     {
@@ -285,7 +285,7 @@
       "gender": "male",
       "pantheon": "vedic",
       "isMajor": false,
-      "aspects": ["craftmen","architects"]
+      "aspects": ["craftsmen","architects"]
     },
     {
       "name": "Vishnu",

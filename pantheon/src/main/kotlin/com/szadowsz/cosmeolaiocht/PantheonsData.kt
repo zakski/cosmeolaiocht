@@ -25,9 +25,8 @@ data class PantheonsData(
     }
 
     fun printAspectReports() {
-        val f = File("./report/religion/aspects/unknown")
-        FileUtils.deleteJson(f.parentFile)
-        f.mkdirs()
+        val unknown = File("./report/religion/aspects/unknown")
+        FileUtils.deleteJson(unknown.parentFile)
 
         roles.forEach { r ->
             val f2 =  File("./report/religion/aspects/$r")
@@ -42,6 +41,9 @@ data class PantheonsData(
                         JsonMapper.write(f, a)
                     }
                 } else {
+                    if (!unknown.exists()){
+                        unknown.mkdirs()
+                    }
                     val f = File("./report/religion/aspects/unknown/$fileName.json")
                     JsonMapper.write(f, a)
                 }

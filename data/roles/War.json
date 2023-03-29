@@ -2,6 +2,7 @@
   "name": "war",
   "desc": "A deity or spirit who is associated with war, combat, or bloodshed.",
   "aspects": [
+    "destruction",
     "smiths",
     "strength",
     "war",
