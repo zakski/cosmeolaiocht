@@ -81,72 +81,155 @@ object PantheonProcessor {
             val deitiesInPantheon = deitiesByPantheon.get(pantheon).orEmpty()
             val eventPojosInPantheon = eventPojosByPantheon.get(pantheon).orEmpty()
 
-            val eventsInPantheon = ArrayList<Event>()
-
-            for (pojo in eventPojosInPantheon){
-                eventsInPantheon.add(Event(pojo.pantheon, pojo.id, EventType.valueOf(pojo.type),pojo.precedence, deitiesInPantheon.filter { d -> pojo.deities.contains(d.name) }))
-            }
-
-
-            // bigbang occurs first, it's the starting marker
-            eventsInPantheon.find { e -> e.type == EventType.bigBang}?: eventsInPantheon.add(Event(
-                pantheon,
-                pantheon + "-" + eventsInPantheon.size,
-                EventType.bigBang,
-                0,
-                ArrayList<Deity>()
-            ))
-
-            // then primordial deities pop into existence
-            val primordialEvents = eventsInPantheon.filter { e -> e.type == EventType.primordial }
-            val primordialDeities = deitiesInPantheon.filter { d -> d.isPrimordial && !primordialEvents.any { e -> e.deities.contains(d) } }
-            for (deity in primordialDeities) {
-                eventsInPantheon.add(Event(
-                    pantheon,
-                    pantheon + "-" + eventsInPantheon.size,
-                    EventType.primordial,
-                    1,
-                    arrayListOf(deity)
-                ))
-            }
-
-            var birthEvents = eventsInPantheon.filter { e -> e.type == EventType.birthOfDeity }
-            var birthDeities = deitiesInPantheon.filter { d -> !d.isPrimordial && !birthEvents.any { e -> e.deities.contains(d) } }
-
-            var size = -1
-            var precedence = 2
-            while (birthDeities.isNotEmpty() && birthDeities.size != size) {
-                size = birthDeities.size
-                birthEvents = eventsInPantheon.filter { e -> e.type == EventType.birthOfDeity }
-                val (toAdd, leftovers) = birthDeities.partition { d -> d.parents.isEmpty() || d.parents.all { p -> birthEvents.any { e -> e.deities.contains(p) } } }
-                birthDeities = leftovers
-                for (deity in toAdd) {
-                    eventsInPantheon.add(Event(
-                        pantheon,
-                        pantheon + "-" + eventsInPantheon.size,
-                        EventType.birthOfDeity,
-                        precedence,
-                        arrayListOf(deity)
-                    ))
-                }
-                precedence += 1
-            }
-
-            // last is ragnarok, eschatological
-            val deathEvents = eventsInPantheon.filter { e -> e.type == EventType.deathOfDeity }
-            val aliveDeities = deitiesInPantheon.filter { d -> !deathEvents.any { e -> e.deities.contains(d) } }
-            eventsInPantheon.find { e -> e.type == EventType.eschatological}?: eventsInPantheon.add(Event(
-                pantheon,
-                pantheon + "-" + eventsInPantheon.size,
-                EventType.eschatological,
-                eventsInPantheon.maxOf { e -> e.precedence } + 1,
-                aliveDeities
-            ))
+            val eventsInPantheon = scheduleEvents(pantheon, deitiesInPantheon, eventPojosInPantheon)
 
             eventsByPantheon.put(pantheon, eventsInPantheon)
         }
 
         return eventsByPantheon.values.flatten();
+    }
+
+    private fun findPrecedence(eventsInPantheon: ArrayList<Event>, default: Int, involved: List<Deity>): Int {
+        val birthEvents = eventsInPantheon.filter { e ->
+            (e.type == EventType.birthOfDeity || e.type == EventType.primordial) && involved.any{d -> e.deities.contains(d)}
+        }
+        val deathEvents = eventsInPantheon.filter { e ->
+            e.type == EventType.deathOfDeity && involved.any{d -> e.deities.contains(d)}
+        }
+
+        if (involved.size > 0 && birthEvents.isEmpty()){
+            return default
+        }
+
+        if (deathEvents.isEmpty()){
+            return birthEvents.maxOf { e -> e.precedence } + 1
+        } else {
+            return birthEvents.maxOf { e -> e.precedence } + 1 // TODO
+        }
+    }
+
+    private fun initialEvents(pojos: List<EventPojo>, events: ArrayList<Event>, deities: List<Deity>, pantheon: String, unscheduled: ArrayList<Event>) {
+        for (pojo in pojos) {
+            val precedence = findPrecedence(
+                events,
+                pojo.precedence ?: -1,
+                deities.filter { d -> pojo.deities.contains(d.name) })
+
+            if (precedence > 0) {
+                events.add(
+                    Event(
+                        pojo.pantheon,
+                        pojo.id ?: (pantheon + "-" + events.size),
+                        EventType.valueOf(pojo.type),
+                        precedence,
+                        deities.filter { d -> pojo.deities.contains(d.name) })
+                )
+            } else {
+                unscheduled.add(
+                    Event(
+                        pojo.pantheon,
+                        pojo.id ?: (pantheon + "-unsched-" + unscheduled.size),
+                        EventType.valueOf(pojo.type),
+                        precedence,
+                        deities.filter { d -> pojo.deities.contains(d.name) })
+                )
+            }
+        }
+    }
+
+    private fun addUnscheduled(unscheduleds: ArrayList<Event>, events: ArrayList<Event>, pantheon: String) {
+        val toRemove = ArrayList<Event>()
+        for (unscheduled in unscheduleds) {
+            val precedence = findPrecedence(events, unscheduled.precedence, unscheduled.deities)
+            if (precedence > 1) {
+                events.add(
+                    Event(
+                        unscheduled.pantheon,
+                        if (unscheduled.id.contains("unsched")) pantheon + "-" + events.size else unscheduled.id,
+                        unscheduled.type,
+                        precedence,
+                        unscheduled.deities
+                    )
+                )
+                toRemove.add(unscheduled)
+            }
+        }
+        toRemove.forEach{e -> unscheduleds.remove(e)}
+    }
+
+    private fun handleBirthEvents(unscheduleds: ArrayList<Event>, events: ArrayList<Event>, deities: List<Deity>, pantheon: String) {
+        var birthEvents = events.filter { e -> e.type == EventType.birthOfDeity }
+        var birthDeities =
+            deities.filter { d -> !d.isPrimordial && !birthEvents.any { e -> e.deities.contains(d) } }
+
+        var size = -1
+        var precedence = 2
+        while (birthDeities.isNotEmpty() && birthDeities.size != size) {
+            size = birthDeities.size
+            birthEvents = events.filter { e -> e.type == EventType.birthOfDeity }
+            val (toAdd, leftovers) = birthDeities.partition { d ->
+                d.parents.isEmpty() || d.parents.all { p ->
+                    birthEvents.any { e ->
+                        e.deities.contains(
+                            p
+                        )
+                    }
+                }
+            }
+            birthDeities = leftovers
+            for (deity in toAdd) {
+                events.add(
+                    Event(
+                        pantheon,
+                        pantheon + "-" + events.size,
+                        EventType.birthOfDeity,
+                        precedence,
+                        arrayListOf(deity)
+                    )
+                )
+            }
+            precedence += 1
+            addUnscheduled(unscheduleds,events,pantheon)
+        }
+    }
+
+    private fun scheduleEvents(pantheon: String, deities: List<Deity>, eventPojos: List<EventPojo>): ArrayList<Event> {
+        val eventsInPantheon = ArrayList<Event>()
+        val unscheduledEventsInPantheon = ArrayList<Event>()
+
+        // Try to add manual events
+        initialEvents(eventPojos, eventsInPantheon, deities, pantheon, unscheduledEventsInPantheon)
+
+
+        // bigbang occurs first, it's the starting marker
+        eventsInPantheon.find { e -> e.type == EventType.bigBang } ?: eventsInPantheon.add(
+            Event(pantheon, pantheon + "-" + eventsInPantheon.size, EventType.bigBang, 0, ArrayList())
+        )
+
+        // then primordial deities pop into existence
+        val primordialEvents = eventsInPantheon.filter { e -> e.type == EventType.primordial }
+        val primordialDeities = deities.filter { d -> d.isPrimordial && !primordialEvents.any { e -> e.deities.contains(d) } }
+        for (deity in primordialDeities) {
+            eventsInPantheon.add(
+                Event(pantheon, pantheon + "-" + eventsInPantheon.size, EventType.primordial, 1, arrayListOf(deity))
+            )
+            addUnscheduled(unscheduledEventsInPantheon, eventsInPantheon, pantheon)
+        }
+
+        // then births
+        handleBirthEvents(unscheduledEventsInPantheon, eventsInPantheon, deities, pantheon)
+
+        // last is ragnarok, eschatological
+        val deathEvents = eventsInPantheon.filter { e -> e.type == EventType.deathOfDeity }
+        val aliveDeities = deities.filter { d -> !deathEvents.any { e -> e.deities.contains(d) } }
+        eventsInPantheon.find { e -> e.type == EventType.eschatological } ?: eventsInPantheon.add(Event(
+            pantheon,
+            pantheon + "-" + eventsInPantheon.size,
+            EventType.eschatological,
+            eventsInPantheon.maxOf { e -> e.precedence } + 1,
+            aliveDeities
+        ))
+        return eventsInPantheon
     }
 
     /**

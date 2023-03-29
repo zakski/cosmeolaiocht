@@ -2,12 +2,20 @@
   "name": "heavenly",
   "desc": "",
   "aspects": [
+    "air",
+    "clouds",
     "dawn",
     "day",
     "heaven",
     "light",
     "moon",
+    "morning sun",
+    "night",
+    "set sun",
     "sky",
-    "sun"
+    "stars",
+    "sun",
+    "sunshine",
+    "twilight"
   ]
 }

@@ -2,8 +2,28 @@
   "name": "abstraction",
   "desc": "A deity or spirit who is a concept personified.",
   "aspects": [
+    "art",
+    "breath",
+    "consciousness",
     "death",
+    "decay",
+    "destruction",
     "fate",
-    "love"
+    "friendship",
+    "future",
+    "justice",
+    "knowledge",
+    "love",
+    "luck",
+    "music",
+    "past",
+    "preservation",
+    "protection",
+    "science",
+    "sorrow",
+    "speech",
+    "time",
+    "truth",
+    "wealth"
   ]
 }
