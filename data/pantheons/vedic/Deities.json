@@ -1,0 +1,324 @@
+{
+  "deities": [
+    {
+      "name": "Aditi",
+      "gender": "female",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["sky", "consciousness", "past","future", "fertility"],
+      "children": ["Amsha","Aryaman","Bhaga", "Daksha","Mārtanda","Mitra","Savitr","Varuna"]
+    },
+    {
+      "name": "Agni",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": true,
+      "aspects": ["fire"],
+      "parents": ["Dyáuṣ", "Prithvi"],
+      "siblings": ["Indra", "Surya"]
+    },
+    {
+      "name": "Aranyani",
+      "gender": "female",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["forests","wild animals"]
+    },
+    {
+      "name": "Amsha",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["sun"],
+      "parents": ["Aditi"],
+      "siblings": ["Aryaman","Bhaga","Daksha", "Mārtanda","Mitra","Savitr","Varuna"]
+    },
+    {
+      "name": "Aryaman",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["customs","horses","wealth","hospitality"],
+      "parents": ["Aditi"],
+      "siblings": ["Amsha","Bhaga", "Daksha","Mārtanda","Mitra","Savitr","Varuna"]
+    },
+    {
+      "name": "Ashvini Kumaras",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["medicine", "health", "dawn", "science"],
+      "parents": ["Surya", "Sanjna"],
+      "siblings": ["Asvinau","Yama","Yami"]
+    },
+    {
+      "name": "Asvinau",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["medicine", "health", "dawn", "science"],
+      "parents": ["Surya", "Sanjna"],
+      "siblings": ["Ashvini Kumaras","Yama","Yami"]
+    },
+    {
+      "name": "Bhaga",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["wealth"],
+      "parents": ["Aditi"],
+      "siblings": ["Amsha","Aryaman","Daksha", "Mārtanda","Mitra","Savitr","Varuna"]
+    },
+    {
+      "name": "Brhaspati",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["fire","teaching", "advising"],
+      "consorts": ["Tara"]
+    },
+    {
+      "name": "Daksha",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["priests","sacrificers"],
+      "parents": ["Aditi"],
+      "siblings": ["Amsha","Aryaman","Bhaga", "Mārtanda","Mitra","Savitr","Varuna"]
+    },
+    {
+      "name": "Dyáuṣ",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["sky"],
+      "consorts": ["Prithvi"],
+      "children": ["Indra"]
+    },
+    {
+      "name": "Indra",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": true,
+      "aspects": ["heaven","sky", "lightning", "weather", "thunder", "storms", "rain", "rivers", "war"],
+      "parents": ["Dyáuṣ", "Prithvi"],
+      "siblings": ["Agni","Surya"]
+    },
+    {
+      "name": "Ksetrapati",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["soil"]
+    },
+    {
+      "name": "Manyu",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["war"]
+    },
+    {
+      "name": "Mārtanda",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["set sun"],
+      "parents": ["Aditi"],
+      "siblings": ["Amsha","Aryaman","Bhaga", "Daksha","Savitr", "Mitra","Varuna"]
+    },
+    {
+      "name": "Mitra",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["friendship", "oaths", "morning sun"],
+      "parents": ["Aditi"],
+      "siblings": ["Amsha","Aryaman","Bhaga", "Daksha","Mārtanda","Savitr","Varuna"]
+    },
+    {
+      "name": "Nirṛti",
+      "gender": "female",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["death","decay","sorrow"]
+    },
+    {
+      "name": "Parjanya",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["rain", "thunder", "lightning", "fertility"]
+    },
+    {
+      "name": "Prithvi",
+      "gender": "female",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["earth"],
+      "consorts": ["Dyáuṣ"],
+      "children": ["Indra"]
+    },
+    {
+      "name": "Pushan",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["meetings", "marriages", "journeys", "roads", "cattle"]
+    },
+    {
+      "name": "Ratri",
+      "gender": "female",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["night"],
+      "siblings": ["Ushas"]
+    },
+    {
+      "name": "Rudra",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["wind", "storms", "medicine", "hunting", "luck", "death", "destruction", "time", "animals"]
+    },
+    {
+      "name": "Sanjna",
+      "gender": "female",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["clouds","twilight"],
+      "parents": ["Tvastar"],
+      "consorts": ["Surya"],
+      "siblings": ["Vishvarupa"],
+      "children": ["Ashvini Kumaras","Asvinau","Yama", "Yami"]
+    },
+    {
+      "name": "Sarasvati",
+      "gender": "female",
+      "pantheon": "vedic",
+      "isMajor": true,
+      "aspects": ["knowledge", "music", "art", "speech","rivers"]
+    },
+    {
+      "name": "Savitr",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["sunshine"],
+      "parents": ["Aditi"],
+      "siblings": ["Amsha","Aryaman","Bhaga", "Daksha","Mārtanda","Mitra","Varuna"]
+    },
+    {
+      "name": "Soma",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": true,
+      "aspects": ["plants", "forests","rivers","earth", "vegetation"]
+    },
+    {
+      "name": "Surya",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": true,
+      "aspects": ["sun"],
+      "parents": ["Dyáuṣ", "Prithvi"],
+      "consorts": ["Sanjna"],
+      "siblings": ["Agni", "Indra"],
+      "children": ["Ashvini Kumaras","Asvinau","Yama", "Yami"]
+    },
+    {
+      "name": "Tara",
+      "gender": "female",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["stars"],
+      "consorts": ["Brhaspati"]
+    },
+    {
+      "name": "Tvastar",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["craftmen","artisans", "wombs"],
+      "children": ["Sanjna","Vishvarupa"]
+    },
+    {
+      "name": "Ushas",
+      "gender": "female",
+      "pantheon": "vedic",
+      "isMajor": true,
+      "aspects": ["dawn"],
+      "siblings": ["Ratri"]
+    },
+    {
+      "name": "Vāc",
+      "gender": "female",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["speech"]
+    },
+    {
+      "name": "Varuna",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["sky", "oceans", "water", "justice", "truth"],
+      "parents": ["Aditi"],
+      "siblings": ["Amsha","Aryaman","Bhaga", "Daksha","Mārtanda","Mitra","Savitr"]
+    },
+    {
+      "name": "Vāstoṣpati",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["building","house","homestead"]
+    },
+    {
+      "name": "Vayu",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": true,
+      "aspects": ["air", "wind", "breath"]
+    },
+    {
+      "name": "Vishvakarma",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["craftmen","architects"]
+    },
+    {
+      "name": "Vishnu",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["light","time", "preservation", "protection"]
+    },
+    {
+      "name": "Vishvarupa",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["cows"],
+      "parents": ["Tvastar"]
+    },
+    {
+      "name": "Yama",
+      "gender": "male",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["death", "justice"],
+      "parents": ["Surya", "Sanjna"],
+      "siblings": ["Ashvini Kumaras","Asvinau", "Yami"]
+   },
+    {
+      "name": "Yami",
+      "gender": "female",
+      "pantheon": "vedic",
+      "isMajor": false,
+      "aspects": ["life"],
+      "parents": ["Surya", "Sanjna"],
+      "siblings": ["Ashvini Kumaras","Asvinau","Yama"]
+    }
+  ]
+}
